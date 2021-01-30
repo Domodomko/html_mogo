@@ -107,8 +107,6 @@ hr {
 }
 
 .header.fixed {
-    padding: 10px 0;
-
     background-color: #eb8b8d;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
@@ -134,6 +132,7 @@ hr {
     font-size: 30px;
     font-weight: 700;
     color: #fff;
+    cursor: pointer;
 }
 
 
@@ -141,6 +140,10 @@ hr {
 .nav {
     font-size: 14px;
     text-transform: uppercase;
+}
+
+.nav.active {
+    display: block;
 }
 
 .nav__link {
@@ -616,10 +619,6 @@ hr {
     border: 1px solid #e5e5e5;
 }
 
-.accordion__item.active .accordion__content {
-    display: block;
-}
-
 .accordion__item.active .accordion__header {
     border-bottom-color: #e5e5e5;
 }
@@ -652,6 +651,7 @@ hr {
     z-index: 1;
 
     transform: translateY(-50%) rotate(135deg);
+    transition: transform .1s linear;
 }
 
 .accordion__icon {
@@ -682,6 +682,7 @@ hr {
 
 
 /* Reviews */
+
 .reviews {
     position: relative;
 }
@@ -691,7 +692,6 @@ hr {
 }
 
 .reviews__item {
-    min-height: 210px;
     padding-left: 255px;
     position: relative;
 }
@@ -736,23 +736,27 @@ hr {
     background-color: #f38181;
 }
 
+.slick-slide {
+    outline: 0;
+}
+
 .slick-arrow {
-    display: block;
     font-size: 0;
     color: transparent;
-
+    
     border: 0;
     background: none;
-    cursor: pointer;
-
+    
     position: absolute;
     top: 50%;
     z-index: 1;
     transform: translateY(-50%);
+    
+    cursor: pointer;
 }
 
 .slick-arrow:focus {
-    outline: 0;
+    outline: none;
 }
 
 .slick-arrow:after {
@@ -765,13 +769,12 @@ hr {
     border-left: 2px solid #ccc;
 }
 
-.slick-prev {
+.slick-prev{
     left: 0;
     transform: rotate(-45deg);
 }
 
-.reviews__btn--next,
-.slick-next {
+.slick-next{
     right: 0;
     transform: rotate(135deg);
 }
@@ -1434,10 +1437,6 @@ hr {
         left: 0;
 
         background-color: #eb8b8d;
-    }
-
-    .nav.active {
-        display: block;
     }
 
     .nav__link {
